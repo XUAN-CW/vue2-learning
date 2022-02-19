@@ -13,7 +13,7 @@
     <h3>b的值是:{{ numbers.b }}</h3>
     <button @click="numbers.b++">点我让b+1</button>
     <button @click="numbers = { a: 666, b: 888 }">彻底替换掉numbers</button>
-	<h3> numbers.c.d.e 的值是:{{ numbers.c.d.e }}</h3>
+    <h3>numbers.c.d.e 的值是:{{ numbers.c.d.e }}</h3>
   </div>
 </template>
 
