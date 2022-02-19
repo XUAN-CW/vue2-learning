@@ -71,13 +71,12 @@ export default {
 };
 </script>
 
-    <style>
+<style>
 .basic {
   width: 400px;
   height: 100px;
   border: 1px solid black;
 }
-
 .happy {
   border: 4px solid red;
   background-color: rgba(255, 255, 0, 0.644);
