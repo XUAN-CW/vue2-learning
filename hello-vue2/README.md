@@ -18,7 +18,9 @@ C:\Users\33719>node -v
 v16.13.0
 ```
 
-# 初始化项目
+# hello world
+
+## 初始化项目
 
 ```
 vue create hello-vue2
@@ -26,7 +28,7 @@ vue create hello-vue2
 
 刚入门不需要了解那么多，那些选项一路回车即可
 
-# 启动
+## 启动
 
 ```
 🎉  Successfully created project hello-vue2.
@@ -46,11 +48,35 @@ cd hello-vue2
 npm run serve
 ```
 
-# 访问
+## 访问
 
 启动之后访问链接 http://localhost:8080 可见：
 
 ![image-20220219111057803](assets/images/image-20220219111057803.png)
+
+# 开发建议
+
+使用 vs code 开发，安装以下插件：
+
+1. Vetur 
+2. Auto Close Tag
+3. Auto Rename Tag
+4. JavaScript(ES6) code snippets 
+5. Path Intellisense
+6. HTML CSS Support
+7. open in browser
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
