@@ -34,6 +34,7 @@ export default {
   },
   watch: {
     numbers: {
+      // 注释掉 deep 试试
       deep: true,
       handler() {
         console.log("numbers改变了");
