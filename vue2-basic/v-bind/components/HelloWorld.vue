@@ -31,8 +31,8 @@ export default {
       school: {
         name: "尚硅谷",
         url: "http://www.atguigu.com",
-      },
-    };
-  },
+      }
+    }
+  }
 };
 </script>
