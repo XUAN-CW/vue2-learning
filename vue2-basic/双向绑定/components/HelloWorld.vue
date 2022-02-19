@@ -8,8 +8,8 @@
 export default {
   data() {
     return {
-			name:'atguigu',
-			address:'北京'
+	  name:'atguigu',
+	  address:'北京'
     };
   }
 }
