@@ -10,7 +10,7 @@ export default {
     return {
       name: "atguigu",
       address: "北京",
-    }
-  }
-}
+    };
+  },
+};
 </script>
