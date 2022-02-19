@@ -32,6 +32,7 @@ export default {
     },
   },
   watch: {
+    ////////// 正常写法 //////////
     isHot: {
       immediate: true, //初始化时让handler调用一下
       //handler什么时候调用？当isHot发生改变时。
@@ -39,6 +40,10 @@ export default {
         console.log("isHot被修改了", newValue, oldValue);
       },
     },
+	////////// 简写 //////////
+//     isHot(newValue, oldValue) {
+//       console.log("isHot被修改了", newValue, oldValue, this);
+//    },
   },
 };
 </script>
