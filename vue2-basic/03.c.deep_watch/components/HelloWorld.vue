@@ -34,7 +34,7 @@ export default {
   },
   watch: {
     numbers: {
-      // 注释掉 deep 试试
+      // 注释掉 deep 后, b 增加也不会触发此事件了
       deep: true,
       handler() {
         console.log("numbers改变了");
