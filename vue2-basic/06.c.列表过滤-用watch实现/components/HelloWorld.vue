@@ -20,17 +20,13 @@ export default {
         { id: "003", name: "周杰伦", age: 21, sex: "男" },
         { id: "004", name: "温兆伦", age: 22, sex: "男" },
       ],
-      filPerons: [],
     };
   },
-  watch: {
-    keyWord: {
-      immediate: true,
-      handler(val) {
-        this.filPerons = this.persons.filter((p) => {
-          return p.name.indexOf(val) !== -1;
-        });
-      },
+  computed: {
+    filPerons() {
+      return this.persons.filter((p) => {
+        return p.name.indexOf(this.keyWord) !== -1;
+      });
     },
   },
 };
