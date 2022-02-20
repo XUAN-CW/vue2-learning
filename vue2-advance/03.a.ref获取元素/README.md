@@ -6,7 +6,7 @@ id: 1645367525267195900
 ---
 # 摘要
 
-
+ref 是用来获取 DOM 元素的，与 `document.getElementById()` 有异曲同工之妙
 
 # 参考
 
