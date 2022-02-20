@@ -6,7 +6,7 @@ id: 1645362573931086100
 ---
 # 摘要
 
-这里的项目都是使用下面这条命令创建出来的：
+1. 这里的项目都是使用下面这条命令创建出来的：
 
 ```sh
 vue create vue2-basic
@@ -14,7 +14,7 @@ vue create vue2-basic
 
 创建完成后再根据项目的实际内容重命名文件夹，所以文件名不是 **vue2-basic** 
 
-
+2. 这里的每个项目都只修改了  `src/components/HelloWorld.vue` 这一个文件
 
 
 
