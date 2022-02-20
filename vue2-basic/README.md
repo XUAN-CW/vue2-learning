@@ -10,11 +10,19 @@ vue2 基础学习
 
 # 使用说明
 
+## 重命名文件夹
+
 删掉原来的 `src` 文件夹，将文件名重命名为 `src` 即可运行
 
+## Project setup
+```
+npm install
+```
 
-
-
+## Compiles and hot-reloads for development
+```
+npm run serve
+```
 
 
 
