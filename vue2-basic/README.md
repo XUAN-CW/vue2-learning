@@ -1,24 +1,20 @@
-# vue2-basic
+---
+title: vue2-basic
+tags: 
+date: 2022-02-20 20:08:09
+id: 1645358889641282500
+---
+# 摘要
 
-## Project setup
-```
-npm install
-```
+vue2 基础学习
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# 使用方法
 
-### Compiles and minifies for production
-```
-npm run build
-```
+将
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+
+
