@@ -1,4 +1,4 @@
-# vue-advance
+# vue2-advance
 
 ## Project setup
 ```
