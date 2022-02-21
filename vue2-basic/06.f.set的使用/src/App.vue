@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="root">
+    <h1>学校信息</h1>
+    <h2>学校名称：{{ school.name }}</h2>
+    <h2>学校地址：{{ school.address }}</h2>
+    <h2>校长是：{{ school.leader }}</h2>
+    <hr />
+    <h1>学生信息</h1>
+    <button @click="addSex">添加一个性别属性，默认值是男</button>
+    <h2>姓名：{{ student.name }}</h2>
+    <h2 v-if="student.sex">性别：{{ student.sex }}</h2>
+    <h2>年龄：真实{{ student.age.rAge }}，对外{{ student.age.sAge }}</h2>
+    <h2>朋友们</h2>
+    <ul>
+      <li v-for="(f, index) in student.friends" :key="index">
+        {{ f.name }}--{{ f.age }}
+      </li>
+    </ul>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      school: {
+        name: "尚硅谷",
+        address: "北京",
+      },
+      student: {
+        name: "tom",
+        age: {
+          rAge: 40,
+          sAge: 29,
+        },
+        friends: [
+          { name: "jerry", age: 35 },
+          { name: "tony", age: 36 },
+        ],
+      },
+    };
+  },
+  methods: {
+    addSex() {
+      // Vue.set(this.student,'sex','男')
+      this.$set(this.student, "sex", "男");
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

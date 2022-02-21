@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h2>今天天气很{{ info }}</h2>
+    <!-- 绑定事件的时候：@xxx="yyy" yyy可以写一些简单的语句 -->
+    <!-- <button @click="isHot = !isHot">切换天气</button> -->
+    <button @click="changeWeather">切换天气</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      isHot: true,
+    };
+  },
+  computed: {
+    info() {
+      return this.isHot ? "炎热" : "凉爽";
+    },
+  },
+  methods: {
+    changeWeather() {
+      this.isHot = !this.isHot;
+    },
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

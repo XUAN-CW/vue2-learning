@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- 准备好一个容器-->
+  <div id="root">
+    <h2>人员列表</h2>
+    <button @click="updateMei">更新马冬梅的信息</button>
+    <ul>
+      <li v-for="p of persons" :key="p.id">
+        {{ p.name }}-{{ p.age }}-{{ p.sex }}
+      </li>
+    </ul>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      keyWord: "",
+      persons: [
+        { id: "001", name: "马冬梅", age: 19, sex: "女" },
+        { id: "002", name: "周冬雨", age: 20, sex: "女" },
+        { id: "003", name: "周杰伦", age: 21, sex: "男" },
+        { id: "004", name: "温兆伦", age: 22, sex: "男" },
+      ],
+    };
+  },
+  methods: {
+    updateMei() {
+      // this.persons[0].name = '马老师' //奏效
+      // this.persons[0].age = 50 //奏效
+      // this.persons[0].sex = '男' //奏效
+      // this.persons[0] = {id:'001',name:'马老师',age:50,sex:'男'} //不奏效
+      this.persons.splice(0, 1, {
+        id: "001",
+        name: "马老师",
+        age: 50,
+        sex: "男",
+      });
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

@@ -1,28 +1,49 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- 
+        监视属性watch：
+          1.当被监视的属性变化时, 回调函数自动调用, 进行相关操作
+          2.监视的属性必须存在，才能进行监视！！
+          3.监视的两种写法：
+              (1).new Vue时传入watch配置
+              (2).通过vm.$watch监视
+     -->
+  <!-- 准备好一个容器-->
+  <div>
+    <h2>今天天气很{{ info }}</h2>
+    <button @click="changeWeather">切换天气</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      isHot: true,
+    };
+  },
+  computed: {
+    info() {
+      return this.isHot ? "炎热" : "凉爽";
+    },
+  },
+  methods: {
+    changeWeather() {
+      this.isHot = !this.isHot;
+    },
+  },
+  watch: {
+    ////////// 正常写法 //////////
+    isHot: {
+      immediate: true, //初始化时让handler调用一下
+      //handler什么时候调用？当isHot发生改变时。
+      handler(newValue, oldValue) {
+        console.log("isHot被修改了", newValue, oldValue);
+      },
+    },
+	////////// 简写 //////////
+//     isHot(newValue, oldValue) {
+//       console.log("isHot被修改了", newValue, oldValue, this);
+//    },
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
