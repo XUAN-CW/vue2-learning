@@ -1,24 +1,30 @@
-# todo-list
+---
+title: todo-list
+tags: 
+date: 2022-02-21 15:51:14
+id: 1645429874272429600
+---
+# 摘要
 
-## Project setup
-```
-npm install
+# 代码实现
+
+## 创建项目
+
+```sh
+# 创建项目
+vue create todo-list
+# 进入项目
+cd todo-list
+# 安装y
+npm install --save nanoid@3.1.23
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+# 参考
+
+ https://github.com/ai/nanoid 
