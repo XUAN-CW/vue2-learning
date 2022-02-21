@@ -36,7 +36,7 @@ export default {
 
 ## 使用
 
-直接使用即可
+直接使用即可，就像你把 `methods:showName`  、`data.name` 写在 [HelloWorld.vue](src\components\HelloWorld.vue) 里一样
 
 ```vue
     <h2 @click="showName">学校名称：{{ name }}</h2>
