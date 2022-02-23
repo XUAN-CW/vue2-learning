@@ -11,6 +11,6 @@ id: 1645506971300138500
 # 环境准备
 
 ```
- npm install vue-router@3.2
+ npm install vue-router@3.2.0
 ```
 
