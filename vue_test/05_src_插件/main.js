@@ -11,6 +11,6 @@ Vue.config.productionTip = false
 Vue.use(plugins,1,2,3)
 //创建vm
 new Vue({
-	el:'#app',
-	render: h => h(App)
+  el:'#app',
+  render: h => h(App)
 })

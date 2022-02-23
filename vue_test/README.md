@@ -2,22 +2,22 @@
 
 ## 脚手架文件结构
 
-	├── node_modules 
-	├── public
-	│   ├── favicon.ico: 页签图标
-	│   └── index.html: 主页面
-	├── src
-	│   ├── assets: 存放静态资源
-	│   │   └── logo.png
-	│   │── component: 存放组件
-	│   │   └── HelloWorld.vue
-	│   │── App.vue: 汇总所有组件
-	│   │── main.js: 入口文件
-	├── .gitignore: git版本管制忽略的配置
-	├── babel.config.js: babel的配置文件
-	├── package.json: 应用包配置文件 
-	├── README.md: 应用描述文件
-	├── package-lock.json：包版本控制文件
+  ├── node_modules 
+  ├── public
+  │   ├── favicon.ico: 页签图标
+  │   └── index.html: 主页面
+  ├── src
+  │   ├── assets: 存放静态资源
+  │   │   └── logo.png
+  │   │── component: 存放组件
+  │   │   └── HelloWorld.vue
+  │   │── App.vue: 汇总所有组件
+  │   │── main.js: 入口文件
+  ├── .gitignore: git版本管制忽略的配置
+  ├── babel.config.js: babel的配置文件
+  ├── package.json: 应用包配置文件 
+  ├── README.md: 应用描述文件
+  ├── package-lock.json：包版本控制文件
 
 ## 关于不同版本的Vue
 
@@ -55,11 +55,11 @@
 
         ```js
         props:{
-        	name:{
-        	type:String, //类型
-        	required:true, //必要性
-        	default:'老王' //默认值
-        	}
+          name:{
+          type:String, //类型
+          required:true, //必要性
+          default:'老王' //默认值
+          }
         }
         ```
 
@@ -83,8 +83,8 @@
 
     第二步使用混入：
 
-    ​	全局混入：```Vue.mixin(xxx)```
-    ​	局部混入：```mixins:['xxx']	```
+    ​  全局混入：```Vue.mixin(xxx)```
+    ​  局部混入：```mixins:['xxx']  ```
 
 ## 插件
 
@@ -122,21 +122,21 @@
 
 1. 组件化编码流程：
 
-    ​	(1).拆分静态组件：组件要按照功能点拆分，命名不要与html元素冲突。
+    ​  (1).拆分静态组件：组件要按照功能点拆分，命名不要与html元素冲突。
 
-    ​	(2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
+    ​  (2).实现动态组件：考虑好数据的存放位置，数据是一个组件在用，还是一些组件在用：
 
-    ​			1).一个组件在用：放在组件自身即可。
+    ​      1).一个组件在用：放在组件自身即可。
 
-    ​			2). 一些组件在用：放在他们共同的父组件上（<span style="color:red">状态提升</span>）。
+    ​      2). 一些组件在用：放在他们共同的父组件上（<span style="color:red">状态提升</span>）。
 
-    ​	(3).实现交互：从绑定事件开始。
+    ​  (3).实现交互：从绑定事件开始。
 
 2. props适用于：
 
-    ​	(1).父组件 ==> 子组件 通信
+    ​  (1).父组件 ==> 子组件 通信
 
-    ​	(2).子组件 ==> 父组件 通信（要求父先给子一个函数）
+    ​  (2).子组件 ==> 父组件 通信（要求父先给子一个函数）
 
 3. 使用v-model时要切记：v-model绑定的值不能是props传过来的值，因为props是不可以修改的！
 
@@ -151,19 +151,19 @@
 3. 相关API：
 
     1. ```xxxxxStorage.setItem('key', 'value');```
-        				该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
+                该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
 
     2. ```xxxxxStorage.getItem('person');```
 
-        ​		该方法接受一个键名作为参数，返回键名对应的值。
+        ​    该方法接受一个键名作为参数，返回键名对应的值。
 
     3. ```xxxxxStorage.removeItem('key');```
 
-        ​		该方法接受一个键名作为参数，并把该键名从存储中删除。
+        ​    该方法接受一个键名作为参数，并把该键名从存储中删除。
 
     4. ``` xxxxxStorage.clear()```
 
-        ​		该方法会清空存储中的所有数据。
+        ​    该方法会清空存储中的所有数据。
 
 4. 备注：
 
@@ -194,7 +194,7 @@
 
     3. 若想让自定义事件只能触发一次，可以使用```once```修饰符，或```$once```方法。
 
-4. 触发自定义事件：```this.$emit('atguigu',数据)```		
+4. 触发自定义事件：```this.$emit('atguigu',数据)```    
 
 5. 解绑自定义事件```this.$off('atguigu')```
 
@@ -210,10 +210,10 @@
 
    ```js
    new Vue({
-   	......
-   	beforeCreate() {
-   		Vue.prototype.$bus = this //安装全局事件总线，$bus就是当前应用的vm
-   	},
+     ......
+     beforeCreate() {
+       Vue.prototype.$bus = this //安装全局事件总线，$bus就是当前应用的vm
+     },
        ......
    }) 
    ```
@@ -261,7 +261,7 @@
    4. 提供数据：```pubsub.publish('xxx',数据)```
 
    5. 最好在beforeDestroy钩子中，用```PubSub.unsubscribe(pid)```去<span style="color:red">取消订阅。</span>
-	
+  
 ## nextTick
 
 1. 语法：```this.$nextTick(回调函数)```
@@ -291,7 +291,7 @@
 
       ```vue
       <transition name="hello">
-      	<h1 v-show="isShow">你好啊！</h1>
+        <h1 v-show="isShow">你好啊！</h1>
       </transition>
       ```
 
@@ -301,7 +301,7 @@
 
 ### 方法一
 
-​	在vue.config.js中添加如下配置：
+​  在vue.config.js中添加如下配置：
 
 ```js
 devServer:{
@@ -317,11 +317,11 @@ devServer:{
 
 ### 方法二
 
-​	编写vue.config.js配置具体代理规则：
+​  编写vue.config.js配置具体代理规则：
 
 ```js
 module.exports = {
-	devServer: {
+  devServer: {
       proxy: {
       '/api1': {// 匹配所有以 '/api1'开头的请求路径
         target: 'http://localhost:5000',// 代理目标的基础路径
@@ -403,28 +403,28 @@ module.exports = {
 
          ```vue
          父组件中：
-         		<Category>
-         			<template scope="scopeData">
-         				<!-- 生成的是ul列表 -->
-         				<ul>
-         					<li v-for="g in scopeData.games" :key="g">{{g}}</li>
-         				</ul>
-         			</template>
-         		</Category>
+             <Category>
+               <template scope="scopeData">
+                 <!-- 生成的是ul列表 -->
+                 <ul>
+                   <li v-for="g in scopeData.games" :key="g">{{g}}</li>
+                 </ul>
+               </template>
+             </Category>
          
-         		<Category>
-         			<template slot-scope="scopeData">
-         				<!-- 生成的是h4标题 -->
-         				<h4 v-for="g in scopeData.games" :key="g">{{g}}</h4>
-         			</template>
-         		</Category>
+             <Category>
+               <template slot-scope="scopeData">
+                 <!-- 生成的是h4标题 -->
+                 <h4 v-for="g in scopeData.games" :key="g">{{g}}</h4>
+               </template>
+             </Category>
          子组件中：
                  <template>
                      <div>
                          <slot :games="games"></slot>
                      </div>
                  </template>
-         		
+             
                  <script>
                      export default {
                          name:'Category',
@@ -446,11 +446,11 @@ module.exports = {
 
 ### 1.概念
 
-​		在Vue中实现集中式状态（数据）管理的一个Vue插件，对vue应用中多个组件的共享状态进行集中式的管理（读/写），也是一种组件间通信的方式，且适用于任意组件间通信。
+​    在Vue中实现集中式状态（数据）管理的一个Vue插件，对vue应用中多个组件的共享状态进行集中式的管理（读/写），也是一种组件间通信的方式，且适用于任意组件间通信。
 
 ### 2.何时使用？
 
-​		多个组件需要共享数据时
+​    多个组件需要共享数据时
 
 ### 3.搭建vuex环境
 
@@ -473,9 +473,9 @@ module.exports = {
    
    //创建并暴露store
    export default new Vuex.Store({
-   	actions,
-   	mutations,
-   	state
+     actions,
+     mutations,
+     state
    })
    ```
 
@@ -489,9 +489,9 @@ module.exports = {
    
    //创建vm
    new Vue({
-   	el:'#app',
-   	render: h => h(App),
-   	store
+     el:'#app',
+     render: h => h(App),
+     store
    })
    ```
 
@@ -509,18 +509,18 @@ module.exports = {
    
    const actions = {
        //响应组件中加的动作
-   	jia(context,value){
-   		// console.log('actions中的jia被调用了',miniStore,value)
-   		context.commit('JIA',value)
-   	},
+     jia(context,value){
+       // console.log('actions中的jia被调用了',miniStore,value)
+       context.commit('JIA',value)
+     },
    }
    
    const mutations = {
        //执行加
-   	JIA(state,value){
-   		// console.log('mutations中的JIA被调用了',state,value)
-   		state.sum += value
-   	}
+     JIA(state,value){
+       // console.log('mutations中的JIA被调用了',state,value)
+       state.sum += value
+     }
    }
    
    //初始化数据
@@ -530,9 +530,9 @@ module.exports = {
    
    //创建并暴露store
    export default new Vuex.Store({
-   	actions,
-   	mutations,
-   	state,
+     actions,
+     mutations,
+     state,
    })
    ```
 
@@ -552,15 +552,15 @@ module.exports = {
    ......
    
    const getters = {
-   	bigSum(state){
-   		return state.sum * 10
-   	}
+     bigSum(state){
+       return state.sum * 10
+     }
    }
    
    //创建并暴露store
    export default new Vuex.Store({
-   	......
-   	getters
+     ......
+     getters
    })
    ```
 
@@ -710,16 +710,16 @@ module.exports = {
    
    //创建router实例对象，去管理一组一组的路由规则
    const router = new VueRouter({
-   	routes:[
-   		{
-   			path:'/about',
-   			component:About
-   		},
-   		{
-   			path:'/home',
-   			component:Home
-   		}
-   	]
+     routes:[
+       {
+         path:'/about',
+         component:About
+       },
+       {
+         path:'/home',
+         component:Home
+       }
+     ]
    })
    
    //暴露router
@@ -751,24 +751,24 @@ module.exports = {
 
    ```js
    routes:[
-   	{
-   		path:'/about',
-   		component:About,
-   	},
-   	{
-   		path:'/home',
-   		component:Home,
-   		children:[ //通过children配置子级路由
-   			{
-   				path:'news', //此处一定不要写：/news
-   				component:News
-   			},
-   			{
-   				path:'message',//此处一定不要写：/message
-   				component:Message
-   			}
-   		]
-   	}
+     {
+       path:'/about',
+       component:About,
+     },
+     {
+       path:'/home',
+       component:Home,
+       children:[ //通过children配置子级路由
+         {
+           path:'news', //此处一定不要写：/news
+           component:News
+         },
+         {
+           path:'message',//此处一定不要写：/message
+           component:Message
+         }
+       ]
+     }
    ]
    ```
 
@@ -785,16 +785,16 @@ module.exports = {
    ```vue
    <!-- 跳转并携带query参数，to的字符串写法 -->
    <router-link :to="/home/message/detail?id=666&title=你好">跳转</router-link>
-   				
+           
    <!-- 跳转并携带query参数，to的对象写法 -->
    <router-link 
-   	:to="{
-   		path:'/home/message/detail',
-   		query:{
-   		   id:666,
+     :to="{
+       path:'/home/message/detail',
+       query:{
+          id:666,
                title:'你好'
-   		}
-   	}"
+       }
+     }"
    >跳转</router-link>
    ```
 
@@ -815,21 +815,21 @@ module.exports = {
 
       ```js
       {
-      	path:'/demo',
-      	component:Demo,
-      	children:[
-      		{
-      			path:'test',
-      			component:Test,
-      			children:[
-      				{
+        path:'/demo',
+        component:Demo,
+        children:[
+          {
+            path:'test',
+            component:Test,
+            children:[
+              {
                             name:'hello' //给路由命名
-      					path:'welcome',
-      					component:Hello,
-      				}
-      			]
-      		}
-      	]
+                path:'welcome',
+                component:Hello,
+              }
+            ]
+          }
+        ]
       }
       ```
 
@@ -844,13 +844,13 @@ module.exports = {
       
       <!--简化写法配合传递参数 -->
       <router-link 
-      	:to="{
-      		name:'hello',
-      		query:{
-      		   id:666,
+        :to="{
+          name:'hello',
+          query:{
+             id:666,
                   title:'你好'
-      		}
-      	}"
+          }
+        }"
       >跳转</router-link>
       ```
 
@@ -860,24 +860,24 @@ module.exports = {
 
    ```js
    {
-   	path:'/home',
-   	component:Home,
-   	children:[
-   		{
-   			path:'news',
-   			component:News
-   		},
-   		{
-   			component:Message,
-   			children:[
-   				{
-   					name:'xiangqing',
-   					path:'detail/:id/:title', //使用占位符声明接收params参数
-   					component:Detail
-   				}
-   			]
-   		}
-   	]
+     path:'/home',
+     component:Home,
+     children:[
+       {
+         path:'news',
+         component:News
+       },
+       {
+         component:Message,
+         children:[
+           {
+             name:'xiangqing',
+             path:'detail/:id/:title', //使用占位符声明接收params参数
+             component:Detail
+           }
+         ]
+       }
+     ]
    }
    ```
 
@@ -886,16 +886,16 @@ module.exports = {
    ```vue
    <!-- 跳转并携带params参数，to的字符串写法 -->
    <router-link :to="/home/message/detail/666/你好">跳转</router-link>
-   				
+           
    <!-- 跳转并携带params参数，to的对象写法 -->
    <router-link 
-   	:to="{
-   		name:'xiangqing',
-   		params:{
-   		   id:666,
+     :to="{
+       name:'xiangqing',
+       params:{
+          id:666,
                title:'你好'
-   		}
-   	}"
+       }
+     }"
    >跳转</router-link>
    ```
 
@@ -910,27 +910,27 @@ module.exports = {
 
 ### 7.路由的props配置
 
-​	作用：让路由组件更方便的收到参数
+​  作用：让路由组件更方便的收到参数
 
 ```js
 {
-	name:'xiangqing',
-	path:'detail/:id',
-	component:Detail,
+  name:'xiangqing',
+  path:'detail/:id',
+  component:Detail,
 
-	//第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件
-	// props:{a:900}
+  //第一种写法：props值为对象，该对象中所有的key-value的组合最终都会通过props传给Detail组件
+  // props:{a:900}
 
-	//第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件
-	// props:true
-	
-	//第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件
-	props(route){
-		return {
-			id:route.query.id,
-			title:route.query.title
-		}
-	}
+  //第二种写法：props值为布尔值，布尔值为true，则把路由收到的所有params参数通过props传给Detail组件
+  // props:true
+  
+  //第三种写法：props值为函数，该函数返回的对象中每一组key-value都会通过props传给Detail组件
+  props(route){
+    return {
+      id:route.query.id,
+      title:route.query.title
+    }
+  }
 }
 ```
 
@@ -949,19 +949,19 @@ module.exports = {
    ```js
    //$router的两个API
    this.$router.push({
-   	name:'xiangqing',
-   		params:{
-   			id:xxx,
-   			title:xxx
-   		}
+     name:'xiangqing',
+       params:{
+         id:xxx,
+         title:xxx
+       }
    })
    
    this.$router.replace({
-   	name:'xiangqing',
-   		params:{
-   			id:xxx,
-   			title:xxx
-   		}
+     name:'xiangqing',
+       params:{
+         id:xxx,
+         title:xxx
+       }
    })
    this.$router.forward() //前进
    this.$router.back() //后退
@@ -998,27 +998,27 @@ module.exports = {
    ```js
    //全局前置守卫：初始化时执行、每次路由切换前执行
    router.beforeEach((to,from,next)=>{
-   	console.log('beforeEach',to,from)
-   	if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
-   		if(localStorage.getItem('school') === 'atguigu'){ //权限控制的具体规则
-   			next() //放行
-   		}else{
-   			alert('暂无权限查看')
-   			// next({name:'guanyu'})
-   		}
-   	}else{
-   		next() //放行
-   	}
+     console.log('beforeEach',to,from)
+     if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
+       if(localStorage.getItem('school') === 'atguigu'){ //权限控制的具体规则
+         next() //放行
+       }else{
+         alert('暂无权限查看')
+         // next({name:'guanyu'})
+       }
+     }else{
+       next() //放行
+     }
    })
    
    //全局后置守卫：初始化时执行、每次路由切换后执行
    router.afterEach((to,from)=>{
-   	console.log('afterEach',to,from)
-   	if(to.meta.title){ 
-   		document.title = to.meta.title //修改网页的title
-   	}else{
-   		document.title = 'vue_test'
-   	}
+     console.log('afterEach',to,from)
+     if(to.meta.title){ 
+       document.title = to.meta.title //修改网页的title
+     }else{
+       document.title = 'vue_test'
+     }
    })
    ```
 
@@ -1026,17 +1026,17 @@ module.exports = {
 
    ```js
    beforeEnter(to,from,next){
-   	console.log('beforeEnter',to,from)
-   	if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
-   		if(localStorage.getItem('school') === 'atguigu'){
-   			next()
-   		}else{
-   			alert('暂无权限查看')
-   			// next({name:'guanyu'})
-   		}
-   	}else{
-   		next()
-   	}
+     console.log('beforeEnter',to,from)
+     if(to.meta.isAuth){ //判断当前路由是否需要进行权限控制
+       if(localStorage.getItem('school') === 'atguigu'){
+         next()
+       }else{
+         alert('暂无权限查看')
+         // next({name:'guanyu'})
+       }
+     }else{
+       next()
+     }
    }
    ```
 
@@ -1065,5 +1065,5 @@ module.exports = {
    1. 地址干净，美观 。
    2. 兼容性和hash模式相比略差。
    3. 应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。
-	 
-	 
+   
+   
