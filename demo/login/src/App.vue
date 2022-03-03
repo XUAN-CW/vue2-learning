@@ -1,8 +1,6 @@
 <template>
   <div>
-    <el-button round @click="dialogFormVisible = !dialogFormVisible"
-      >登录</el-button
-    >
+    <el-button round @click="dialogFormVisible = !dialogFormVisible">登录</el-button>
     <Login v-if="dialogFormVisible"></Login>
   </div>
 </template>
