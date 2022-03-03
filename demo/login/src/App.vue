@@ -5,27 +5,27 @@
     <el-dialog title="登录" :visible.sync="dialogFormVisible" center>
       <!-- 插入测试 -->
       <el-form
-        :model="ruleForm2"
+        :model="lohginForm"
         status-icon
-        :rules="rules2"
-        ref="ruleForm2"
+        :rules="validateRules"
+        ref="lohginForm"
         label-width="100px"
         class="demo-ruleForm"
       >
         <el-form-item label="账号" prop="num">
-          <el-input v-model.number="ruleForm2.num"></el-input>
+          <el-input v-model.number="lohginForm.num"></el-input>
         </el-form-item>
 
         <el-form-item label="密码" prop="pass">
           <el-input
             type="password"
-            v-model="ruleForm2.pass"
+            v-model="lohginForm.pass"
             auto-complete="off"
           ></el-input>
         </el-form-item>
 
         <el-form-item label="记住密码" prop="delivery">
-          <el-switch v-model="ruleForm2.delivery"></el-switch>
+          <el-switch v-model="lohginForm.delivery"></el-switch>
         </el-form-item>
         <span><a>忘记密码？</a></span>
       </el-form>
@@ -35,7 +35,7 @@
         <el-button
           @click="
             dialogFormVisible = false;
-            resetForm('ruleForm2');
+            resetForm('lohginForm');
           "
           >取 消</el-button
         >
@@ -85,12 +85,12 @@ export default {
       loginPower: false,
       /*插入form方法*/
       /*设定规则指向*/
-      ruleForm2: {
+      lohginForm: {
         pass: "",
         num: "",
         delivery: false,
       },
-      rules2: {
+      validateRules: {
         pass: [{ validator: validatePass, trigger: "blur" }],
 
         num: [{ validator: checkNum, trigger: "blur" }],
@@ -111,7 +111,7 @@ export default {
 
   methods: {
     submitForm() {
-      console.log(this.ruleForm2);
+      console.log(this.lohginForm);
     },
   },
 };
