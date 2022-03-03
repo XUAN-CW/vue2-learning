@@ -3,7 +3,6 @@
     <el-button round @click="dialogFormVisible = true">登录</el-button>
 
     <el-dialog title="登录" :visible.sync="dialogFormVisible" center>
-      <!-- 插入测试 -->
       <el-form
         :model="loginForm"
         status-icon
@@ -26,7 +25,6 @@
 
         <span><a>忘记密码？</a></span>
       </el-form>
-      <!-- 插入测试 -->
 
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -83,16 +81,7 @@ export default {
         num: [{ validator: checkNum, trigger: "blur" }],
       },
 
-      /*插入form方法*/
-
       dialogFormVisible: false,
-      form: {
-        name: "",
-        type: [],
-        resource: "",
-        desc: "",
-      },
-      formLabelWidth: "120px",
     };
   },
 
