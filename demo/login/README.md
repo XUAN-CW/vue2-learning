@@ -1,24 +1,34 @@
-# login
+---
+title: login
+tags: 
+date: 2022-03-03 19:20:13
+id: 1646306413163226000
+---
+# 摘要
 
-## Project setup
-```
-npm install
-```
+# 实现步骤
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 安装
 
-### Compiles and minifies for production
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm i element-ui -S
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 完整引入
+
+在 main.js 中写入以下内容：
+
+```javascript
+import Vue from 'vue';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import App from './App.vue';
+
+Vue.use(ElementUI);
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
+```
+
