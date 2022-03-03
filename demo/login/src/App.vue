@@ -10,14 +10,14 @@
         ref="loginForm"
         label-width="100px"
       >
-        <el-form-item label="账号" prop="num">
-          <el-input v-model.number="loginForm.num"></el-input>
+        <el-form-item label="账号" prop="username">
+          <el-input v-model.number="loginForm.username"></el-input>
         </el-form-item>
 
-        <el-form-item label="密码" prop="pass">
+        <el-form-item label="密码" prop="password">
           <el-input
             type="password"
-            v-model="loginForm.pass"
+            v-model="loginForm.password"
             auto-complete="off"
           ></el-input>
         </el-form-item>
@@ -70,12 +70,12 @@ export default {
     return {
       /*设定规则指向*/
       loginForm: {
-        num: "",
-        pass: "",
+        username: "",
+        password: "",
       },
       validateRules: {
-        pass: [{ validator: validatePass, trigger: "blur" }],
-        num: [{ validator: checkNum, trigger: "blur" }],
+        username: [{ validator: checkNum, trigger: "blur" }],
+        password: [{ validator: validatePass, trigger: "blur" }],
       },
       dialogFormVisible: false,
     };
