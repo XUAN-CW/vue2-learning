@@ -25,7 +25,7 @@
         <span><a>忘记密码？</a></span>
       </el-form>
 
-      <div slot="footer" class="dialog-footer">
+      <div slot="footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
         <el-button type="primary" @click="submitForm()">登 录</el-button>
       </div>
