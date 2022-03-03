@@ -5,43 +5,32 @@
     <el-dialog title="登录" :visible.sync="dialogFormVisible" center>
       <!-- 插入测试 -->
       <el-form
-        :model="lohginForm"
+        :model="loginForm"
         status-icon
         :rules="validateRules"
-        ref="lohginForm"
+        ref="loginForm"
         label-width="100px"
         class="demo-ruleForm"
       >
         <el-form-item label="账号" prop="num">
-          <el-input v-model.number="lohginForm.num"></el-input>
+          <el-input v-model.number="loginForm.num"></el-input>
         </el-form-item>
 
         <el-form-item label="密码" prop="pass">
           <el-input
             type="password"
-            v-model="lohginForm.pass"
+            v-model="loginForm.pass"
             auto-complete="off"
           ></el-input>
         </el-form-item>
 
-        <el-form-item label="记住密码" prop="delivery">
-          <el-switch v-model="lohginForm.delivery"></el-switch>
-        </el-form-item>
         <span><a>忘记密码？</a></span>
       </el-form>
       <!-- 插入测试 -->
 
       <div slot="footer" class="dialog-footer">
-        <el-button
-          @click="
-            dialogFormVisible = false;
-            resetForm('lohginForm');
-          "
-          >取 消</el-button
-        >
-        <el-button type="primary" @click="submitForm()"
-          >登 录</el-button
-        >
+        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click="submitForm()">登 录</el-button>
       </div>
     </el-dialog>
   </div>
@@ -79,13 +68,11 @@ export default {
         callback();
       }
     };
-    /*插入form方法*/
 
+    /*插入form方法*/
     return {
-      loginPower: false,
-      /*插入form方法*/
       /*设定规则指向*/
-      lohginForm: {
+      loginForm: {
         pass: "",
         num: "",
         delivery: false,
@@ -111,7 +98,7 @@ export default {
 
   methods: {
     submitForm() {
-      console.log(this.lohginForm);
+      console.log(this.loginForm);
     },
   },
 };
