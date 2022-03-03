@@ -72,14 +72,11 @@ export default {
       loginForm: {
         num: "",
         pass: "",
-        delivery: false,
       },
       validateRules: {
         pass: [{ validator: validatePass, trigger: "blur" }],
-
         num: [{ validator: checkNum, trigger: "blur" }],
       },
-
       dialogFormVisible: false,
     };
   },
