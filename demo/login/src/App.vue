@@ -9,7 +9,6 @@
         :rules="validateRules"
         ref="loginForm"
         label-width="100px"
-        class="demo-ruleForm"
       >
         <el-form-item label="账号" prop="num">
           <el-input v-model.number="loginForm.num"></el-input>
@@ -71,8 +70,8 @@ export default {
     return {
       /*设定规则指向*/
       loginForm: {
-        pass: "",
         num: "",
+        pass: "",
         delivery: false,
       },
       validateRules: {
